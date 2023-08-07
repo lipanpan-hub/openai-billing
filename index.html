@@ -251,7 +251,8 @@ async function checkBilling(apiKey) {
     const timestamp_now = Math.floor(Date.now() / 1000);
     const timestamp_expire = subscriptionData.access_until;
     if (timestamp_now > timestamp_expire) {
-        alert("您的账户额度已过期, 请登录OpenAI进行查看。");
+        // alert("您的账户额度已过期, 请登录OpenAI进行查看。");
+        // Openai的 Key 应该是有期限的 但是我的Key 一般是永不过期的 所以这里存在冲突 我的Key查询的时候总是提示过期 所以我把这里注释掉
     }
     
     const totalAmount = subscriptionData.hard_limit_usd;
